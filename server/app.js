@@ -5,6 +5,7 @@ import cors from "cors";
 const app = express();
 
 app.use(cors({ origin: true, credentials: true }));
+app.use("/static", express.static('public'))
 
 app.get("/api/products", (req, res) => {
     res.send(data.products);

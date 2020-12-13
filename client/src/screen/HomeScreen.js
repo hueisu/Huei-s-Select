@@ -7,22 +7,6 @@ function HomeScreen() {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(false);
 
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         try {
-    //             setIsLoading(true);
-    //             const { data } = await axios.get("http://localhost:3000/api/products");
-    //             setProducts(data);
-    //             setIsLoading(false);
-    //         }
-    //         catch (err) {
-    //             setError(err.message);
-    //             setIsLoading(false);
-    //         }
-    //     };
-    //     fetchData();
-    // }, []);
-
     useEffect(() => {
         setIsLoading(true);
         axios.get("http://localhost:3000/api/products")

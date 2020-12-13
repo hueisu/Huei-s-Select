@@ -5,7 +5,7 @@ function Products(props) {
     return (
         <div className="card">
             <div>
-                <Link to={`/product/${props.id}`}><img src={`.${props.img}`} alt={`product${props.id}`} /></Link>
+                <Link to={`/product/${props.id}`}><img src={`${props.img}`} alt={`product${props.id}`} /></Link>
             </div>
             <div>
                 <Link to={`/product/${props.id}`}>
