@@ -1,28 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Product from "../components/Product";
-import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { getProductsAction } from "../actions/getProductActions";
+
 
 function HomeScreen() {
-    const [products, setProducts] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
-    const [error, setError] = useState(false);
+    const dispatch = useDispatch();
+    const productList = useSelector((state) => state.productList);
+    const { loading, error, products } = productList;
 
     useEffect(() => {
-        setIsLoading(true);
-        axios.get("http://localhost:3000/api/products")
-            .then(res => {
-                const data = res.data;
-                setProducts(data);
-            })
-            .catch((err) => {
-                setError(true);
-            })
-            .then(() => { setIsLoading(false) });
-    }, []);
-
+        dispatch(getProductsAction())
+    }, [dispatch]);
 
     return (
-        isLoading ? (<i className="fas fa-spinner"></i>)
+        loading ? (<i className="fas fa-spinner"></i>)
             :
             error ? (<div>error</div>)
                 :

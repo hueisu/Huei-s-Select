@@ -11,6 +11,14 @@ app.get("/api/products", (req, res) => {
     res.send(data.products);
 });
 
+app.get("/api/products/:id", (req, res) => {
+    const ID = req.params.id;
+    const result = data.products.find((product) => {
+        return product._id == ID;
+    })
+    result ? res.send(result) : res.status(404).send("Product information not found")
+})
+
 app.get("/", (req, res) => {
     res.send("Successfully connected to the server");
 });

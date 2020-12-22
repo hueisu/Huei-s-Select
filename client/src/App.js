@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 import HomeScreen from "./screen/HomeScreen";
 import ProductScreen from "./screen/ProductScreen";
+import CartScreen from "./screen/CartScreen";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -15,10 +16,10 @@ function App() {
         <Header />
         <Route exact path="/" component={HomeScreen} />
         <Route exact path="/product/:id" component={ProductScreen} />
+        <Route exact path="/cart" component={CartScreen} />
         <Footer />
       </div>
     </Router>
-
   );
 }
 
