@@ -139,3 +139,12 @@ img.large {
   margin: 5px;
   border-radius: 50%;
 }
+
+.cart .card {
+  height: auto;
+  align-self: center;
+}
+
+.cart img {
+  max-width: 150px;
+}

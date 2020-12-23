@@ -11,7 +11,7 @@ export const getCartReducer = (state = initialState, action) => {
                 cartItem: [
                     ...state.cartItem,
                     {
-                        name: action.product,
+                        product: action.product,
                         number: action.number
                     }
                 ]

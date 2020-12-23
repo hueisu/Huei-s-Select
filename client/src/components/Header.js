@@ -16,8 +16,7 @@ function Header() {
                 <Link to="/" className="brand">Huei's</Link>
             </div>
             <div className="nav">
-                <Link to="/signup">註冊</Link>
-                <Link to="/signin">登入會員</Link>
+                <Link to="/aboutus">關於Huei's</Link>
                 <Link to="/cart">購物車
                 {cartNum &&
                         <span className="cartNum">

@@ -9,7 +9,7 @@ function ProductScreen(props) {
     const dispatch = useDispatch();
     const getproduct = useSelector(state => state.product);
     const { loading, error, product } = getproduct;
-    const [number, setNumber] = useState("1");
+    const [number, setNumber] = useState(1);
 
 
     useEffect(() => {
@@ -18,7 +18,7 @@ function ProductScreen(props) {
 
 
     function handleNum(e) {
-        setNumber(e.target.value)
+        setNumber(e.target.value);
     }
 
     function submitNum(p, n) {
@@ -53,7 +53,7 @@ function ProductScreen(props) {
                                     })
                                 }
                             </select>
-                            <button onClick={() => submitNum(product.name, number)}>加入購物車</button>
+                            <button onClick={() => submitNum(product, number)}>加入購物車</button>
                         </div>
                     }
                 </div>
