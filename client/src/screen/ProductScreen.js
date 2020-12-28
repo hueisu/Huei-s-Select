@@ -8,6 +8,7 @@ function ProductScreen(props) {
     const productID = props.match.params.id;
     const dispatch = useDispatch();
     const getproduct = useSelector(state => state.product);
+    const getCurrentCart = useSelector(state => state.cartList).cartItem;
     const { loading, error, product } = getproduct;
     const [number, setNumber] = useState(1);
 
@@ -16,14 +17,28 @@ function ProductScreen(props) {
         dispatch(getProductAction(productID))
     }, [dispatch, productID]);
 
+    const inStock = (addNumber) => {
+        const itemInCart = getCurrentCart.find(x => x.product._id === product._id);
+        if (itemInCart) {
+            return (Number(itemInCart.number) + Number(addNumber) <= Number(product.stock))
+        }
+        else {
+            return true;
+        }
+    }
 
     function handleNum(e) {
         setNumber(e.target.value);
     }
 
     function submitNum(p, n) {
-        dispatch(addToCartAction(p, n))
+        if (inStock(n)) {
+            dispatch(addToCartAction(p, n))
+        } else {
+            alert("沒有足夠庫存數量")
+        }
     }
+
 
     return (
         loading ? (<i className="fas fa-spinner"></i>)

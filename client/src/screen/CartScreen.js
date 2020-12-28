@@ -11,7 +11,7 @@ function CartScreen() {
             : (getCartProduct.length === 1) ?
                 getCartProduct[0].product.price * getCartProduct[0].number
                 :
-                getCartProduct.reduce((x, y) => { return x.product.price * x.number + y.product.price * y.number });
+                getCartProduct.map((x) => x.product.price * x.number).reduce((acc, cur) => acc + cur)
 
     return (
         <div className="column cart">
@@ -44,7 +44,6 @@ function CartScreen() {
                         <Link to="/" style={{ "color": "green" }}>繼續購物</Link>
                     </div>
             }
-
         </div>
     )
 }
