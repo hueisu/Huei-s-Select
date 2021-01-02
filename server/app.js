@@ -23,7 +23,12 @@ app.get("/", (req, res) => {
     res.send("Successfully connected to the server");
 });
 
-const port = process.env.PORT || 3000;
+
+
+let port = process.env.PORT;
+if (port == null || port == "") {
+    port = 8000;
+};
 app.listen(port, () => {
     console.log(`Server's on port ${port}`);
 });
