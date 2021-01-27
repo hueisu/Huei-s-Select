@@ -83,19 +83,24 @@ footer {
 
 .card {
   margin: 20px;
+  height: 490px;
   border: solid darkblue;
   border-radius: 0.5rem;
   box-shadow: 10px 5px 5px gray;
-  height: 40rem;
 }
 
 .card img {
-  max-width: 250px;
+  width: 250px;
+  height: 360px;
   margin: 1rem;
 }
 
 .card a {
   color: rgb(68, 60, 156);
+}
+
+.card h2, .card span {
+  margin-left: 15px;
 }
 
 .card a:hover {
@@ -105,7 +110,7 @@ footer {
 /*product screen*/
 
 img.large {
-  max-width: 500px;
+  max-width: 350px;
   border-radius: 5%;
 }
 
@@ -120,12 +125,25 @@ img.large {
   flex-direction: column;
 }
 
+.col-1 select, .col-1 button{
+  width: 250px;
+  margin-top: 10px;
+}
+
 .instock {
   color: green;
 }
 
 .soldout {
   color: red;
+}
+
+.center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
 }
 
 /*cart Screen*/
@@ -140,11 +158,33 @@ img.large {
   border-radius: 50%;
 }
 
+.cart > * {
+  width: 1000px;
+}
+
+.checkout{
+  margin-bottom: 20px;
+  text-align: right;
+  font-size: 18px;
+}
+
+.checkout.center {
+  text-align: center;
+  margin-top: 20%;
+}
+
+.cart-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .cart .card {
   height: auto;
   align-self: center;
 }
 
 .cart img {
-  max-width: 150px;
+  width: 150px;
+  height: 250px;
 }

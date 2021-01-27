@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { addToCartAction } from "../actions/getCartActions";
 import { getProductAction } from "../actions/getProductActions";
 
@@ -41,9 +42,16 @@ function ProductScreen(props) {
 
 
     return (
-        loading ? (<i className="fas fa-spinner"></i>)
+        loading ? (<i class="fas fa-spinner fa-spin"></i>)
             :
-            error ? (<div>{error.data}</div>)
+            error ? (
+                <div>{error.data === "Product information not found" ?
+                    (<div className="center-content">
+                        <p>查無此商品，</p>
+                        <Link to="/" style={{ "color": "green" }}>回首頁</Link>
+                    </div>)
+                    :
+                    error.data} </div>)
                 :
                 <div className="row">
                     <div className="col-2">

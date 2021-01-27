@@ -8,7 +8,7 @@ export const getProductsAction = () =>
             type: PRODUCT_LIST_REQUEST
         });
         try {
-            const { data } = await Axios.get("http://localhost:3000/api/products")
+            const { data } = await Axios.get("https://hueis-data.herokuapp.com/api/products")
             dispatch({
                 type: PRODUCT_LIST_SUCCESS,
                 payload: data
@@ -30,7 +30,7 @@ export const getProductAction = (productID) =>
             type: PRODUCT_REQUEST
         });
         try {
-            const { data } = await Axios.get(`http://localhost:3000/api/products/${productID}`);
+            const { data } = await Axios.get(`https://hueis-data.herokuapp.com/api/products/${productID}`);
             dispatch({
                 type: PRODUCT_SUCCESS,
                 payload: data

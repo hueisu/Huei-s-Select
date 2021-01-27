@@ -16,7 +16,6 @@ function Header() {
                 <Link to="/" className="brand">Huei's</Link>
             </div>
             <div className="nav">
-                <Link to="/aboutus">關於Huei's</Link>
                 <Link to="/cart">購物車
                 {cartNum &&
                         <span className="cartNum">

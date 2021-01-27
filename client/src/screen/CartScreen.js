@@ -14,7 +14,7 @@ function CartScreen() {
                 getCartProduct.map((x) => x.product.price * x.number).reduce((acc, cur) => acc + cur)
 
     return (
-        <div className="column cart">
+        <div className="cart-center cart">
             {
                 getCartProduct.map((cartProduct, index) => {
                     return (
@@ -34,12 +34,12 @@ function CartScreen() {
             {
                 totalPrice
                     ?
-                    <div>
+                    <div class="checkout">
                         <p>總金額：{totalPrice}</p>
                         <button>結帳去<i className="fas fa-shopping-cart" /></button>
                     </div>
                     :
-                    <div className="center">
+                    <div className="checkout center">
                         <p>購物車尚無商品</p>
                         <Link to="/" style={{ "color": "green" }}>繼續購物</Link>
                     </div>

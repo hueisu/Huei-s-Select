@@ -14,7 +14,7 @@ function HomeScreen() {
     }, [dispatch]);
 
     return (
-        loading ? (<i className="fas fa-spinner"></i>)
+        loading ? (<i className="fas fa-spinner fa-pulse"></i>)
             :
             error ? (<div>error</div>)
                 :
